@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/att">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/dwhite">
+            <Spinner
+                android:id="@+id/se"
+                android:layout_gravity="center"
+                android:padding="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawSelectorOnTop="true"/>
+        </android.support.v7.widget.CardView>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/examfrag"
+            android:layout_margin="10dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:cardCornerRadius="2dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/er1"
+                        android:layout_gravity="center"
+                        android:padding="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"/>
+                    <Spinner
+                        android:id="@+id/er2"
+                        android:layout_gravity="center"
+                        android:padding="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"/>
+                    <Spinner
+                        android:id="@+id/er3"
+                        android:layout_gravity="center"
+                        android:padding="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"/>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_button2"
+    android:text="Show"
+    android:textColor="@color/white"
+    />
+    </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardCornerRadius="2dp"
+        app:cardBackgroundColor="@color/dwhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:padding="10dp"
+                android:background="@drawable/custom_button"
+                android:text="Cgpa predictor"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/custom_button"
+                android:text="Target cgpa predictor"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+
+                />
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
+
+</FrameLayout>

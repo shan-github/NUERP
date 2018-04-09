@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/time">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Download as:"
+                android:textSize="18dp"
+                android:padding="10dp"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/pdfBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pdf"
+                android:background="@drawable/custom_button_trans"
+                android:textColor="@color/colorPrimary"/>
+            <Button
+                android:id="@+id/wrdBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Word"
+                android:background="@drawable/custom_button_trans"
+                android:textColor="@color/colorPrimary"/>
+            <Button
+                android:id="@+id/xlBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="excel"
+                android:background="@drawable/custom_button_trans"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+     <com.github.barteksc.pdfviewer.PDFView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/pdf"/>
+    </LinearLayout>
+
+</FrameLayout>

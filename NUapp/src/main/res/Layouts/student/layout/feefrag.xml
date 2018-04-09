@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fee">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="View Dues/Pay Online using net Banking/Credit Card/Debit Card/UPI"/>
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pay online"
+                    android:textColor="@color/white"
+                    android:background="@drawable/custom_button2"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Upload the screenshot/image of payment proof made by other methods(NEFT/Deposit Slip)"/>
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Payment Proof"
+                    android:textColor="@color/white"
+                    android:background="@color/back"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="View status of payment proofs uploaded earlier"/>
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="View Previous Upload"
+                    android:textColor="@color/white"
+                    android:background="@color/back"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Download deposit slip to make payments at ICICI/Yes Bank branches"/>
+                <Button
+                    android:id="@+id/btn5"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Download ICICI deposit slip"
+                    android:textColor="@color/white"
+                    android:background="@color/back"
+                    android:layout_gravity="center"
+                    />
+                <Button
+                    android:id="@+id/btn6"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Download Yes Bank deposit slip"
+                    android:textColor="@color/white"
+                    android:background="@color/back"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="70dp"
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="View all fee receipts generated till date"/>
+                <Button
+                    android:id="@+id/btn7"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fee Receipt"
+                    android:textColor="@color/white"
+                    android:background="@color/back"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/dwhite">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="View Consolidated summary of fees paid till date"/>
+                <Button
+                    android:id="@+id/btn8"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fee Paid summary"
+                    android:textColor="@color/white"
+                    android:background="@color/back"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

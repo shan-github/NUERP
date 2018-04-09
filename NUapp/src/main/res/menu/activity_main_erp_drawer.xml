@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/dashboard"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/turban"
+            android:title="Profile" />
+        <item
+            android:id="@+id/reg"
+            android:icon="@drawable/clipboard"
+            android:title="Registration" />
+        <item
+            android:id="@+id/course"
+            android:icon="@drawable/book"
+            android:title="Course detail" />
+        <item
+            android:id="@+id/att"
+            android:icon="@drawable/hold"
+            android:title="Attendence" />
+        <item
+            android:id="@+id/nav_exam"
+            android:icon="@drawable/test"
+            android:title="Examination" />
+        <item
+            android:id="@+id/nav_fee"
+            android:icon="@drawable/wallet"
+            android:title="Fees details" />
+        <item
+            android:id="@+id/nav_time"
+            android:icon="@drawable/calendar"
+            android:title="Timetable" />
+        <item
+            android:id="@+id/nav_down"
+            android:icon="@drawable/down"
+            android:title="Downloads" />
+        <item
+            android:id="@+id/nav_comp"
+            android:icon="@drawable/chat"
+            android:title="Complaint" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Log Out" />
+
+        </menu>
+    </item>
+
+</menu>
