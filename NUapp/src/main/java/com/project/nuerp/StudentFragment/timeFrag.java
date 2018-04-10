@@ -15,7 +15,7 @@ import com.github.barteksc.pdfviewer.PDFView;
 import com.project.nuerp.R;
 
 public class timeFrag extends Fragment{
-Button downloadBtn;
+Button downloadBtn,wrdbtn,xlbtn;
 PDFView pdfView;
     DownloadManager downloadManager;
 
@@ -29,17 +29,40 @@ PDFView pdfView;
       pdfView=(PDFView)v.findViewById(R.id.pdf);
       pdfView.fromAsset("StudentWiseTTReport.pdf").load();
 
+        wrdbtn=(Button)v.findViewById(R.id.wrdBtn);
       downloadBtn=(Button)v.findViewById(R.id.pdfBtn);
-      downloadBtn.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              downloadManager =(DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-              Uri uri= Uri.parse("https://raw.githubusercontent.com/shan-github/myrep/master/StudentWiseTTReport.pdf");
-              DownloadManager.Request request =new DownloadManager.Request(uri);
-              request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-              Long ref = downloadManager.enqueue(request);
-          }
-      });
+        xlbtn=(Button)v.findViewById(R.id.xlBtn);
+
+        downloadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadManager =(DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+                Uri uri= Uri.parse("https://raw.githubusercontent.com/shan-github/myrep/master/StudentWiseTTReport.pdf");
+                DownloadManager.Request request =new DownloadManager.Request(uri);
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                Long ref = downloadManager.enqueue(request);
+
+            }
+        });wrdbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadManager =(DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+                Uri uri= Uri.parse("https://raw.githubusercontent.com/shan-github/myrep/master/StudentWiseTTReport.doc");
+                DownloadManager.Request request =new DownloadManager.Request(uri);
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                Long ref = downloadManager.enqueue(request);
+
+            }
+        });xlbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadManager =(DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+                Uri uri= Uri.parse("https://raw.githubusercontent.com/shan-github/myrep/master/StudentWiseTTReport.xls");
+                DownloadManager.Request request =new DownloadManager.Request(uri);
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                Long ref = downloadManager.enqueue(request);
+            }
+        });
 
         return v;
 
