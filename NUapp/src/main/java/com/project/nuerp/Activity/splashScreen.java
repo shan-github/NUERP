@@ -32,23 +32,31 @@ ImageView im;
         public void run() {
             boolean flag=false;
             int status ;
-
-            while (log.moveToNext()){
-               status= Integer.parseInt( log.getString(10));
-                if(status==0)
-                    continue;
-                else
-                {
-                    flag=true;
-                    break;
+            try {
+                while (log.moveToNext()) {
+                    status = Integer.parseInt(log.getString(10));
+                    if (status == 0)
+                        continue;
+                    else {
+                        flag = true;
+                        break;
+                    }
                 }
-            }
-            if(flag)
-             startActivity(new Intent(splashScreen.this,mainErp.class));
-            else
-                startActivity(new Intent(splashScreen.this,home.class));
+                if (flag)
+                    startActivity(new Intent(splashScreen.this, mainErp.class));
+                else
+                    startActivity(new Intent(splashScreen.this, home.class));
 
-            finish();
+                finish();
+            }
+            catch(Exception e) {
+                if (flag)
+                    startActivity(new Intent(splashScreen.this, mainErp.class));
+                else
+                    startActivity(new Intent(splashScreen.this, home.class));
+
+                finish();
+            }
         }
     },splash_time_out);
 

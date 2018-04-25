@@ -31,10 +31,10 @@ public class dbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         db.execSQL("create table semesters" +
                 " (semester integer not null primary key" +
                 ");");
+
        db.execSQL("create table branch(branch_id varchar(3) primary key not null," +
          "branch_name varchar(30) not null);");
 
@@ -120,6 +120,26 @@ public class dbHelper extends SQLiteOpenHelper {
         ContentValues contentValues=new ContentValues();
         contentValues.put(COL_8 ,log);
         db.update(TABLE_NAME,contentValues," email_id = "+"'"+email+"'",null );
-        //return true;
+    }
+    public void deleteData(String enro)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,"en_no=?",new String[]{enro});
+    }
+    public Cursor search(String name)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor data=null;
+        if(name!=null)
+        {
+           data= db.rawQuery("select name,en_no from students where name like '%"+name+"%'; ",null);
+            return data;
+        }
+        return data;
+    }
+    public void delete(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, COL_2+"="+id, null);
     }
 }

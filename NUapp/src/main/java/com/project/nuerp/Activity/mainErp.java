@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.nuerp.R;
@@ -39,11 +40,18 @@ public class mainErp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 dbHelper mydb;
 boolean doubleBackToExitPressedOnce = false;
-
+TextView name,email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_erp);
+
+        name=(TextView)findViewById(R.id.username);
+        email=(TextView)findViewById(R.id.emailView);
+
+        mydb=new dbHelper(this);
+        Cursor res = mydb.getLogin();
+        res.moveToFirst();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -55,8 +63,14 @@ boolean doubleBackToExitPressedOnce = false;
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
+        try {
+            name.setText(res.getString(0));
+            email.setText(res.getString(5));
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(this, res.getString(0), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

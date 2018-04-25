@@ -39,10 +39,17 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".dbHelper" />
         <activity android:name=".AdminActivity.addFrag" />
+        <activity android:name=".AdminActivity.updateOpt" />
         <activity android:name=".Activity.student_login" />
         <activity android:name=".AdminActivity.adminHome" />
         <activity android:name=".AdminActivity.addOpt" />
         <activity android:name=".AdminActivity.add_course"></activity>
+        <activity android:name=".AdminActivity.update_students" />
+        <activity android:name=".AdminActivity.update_course" />
+        <activity android:name=".AdminActivity.delete_course" />
+        <activity android:name=".AdminActivity.deleteOpt" />
+        <activity android:name=".AdminActivity.delete_student" />
+
     </application>
 
 </manifest>

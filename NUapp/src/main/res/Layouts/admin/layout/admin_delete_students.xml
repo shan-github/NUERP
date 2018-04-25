@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.nuerp.AdminActivity.addFrag"
+    android:orientation="vertical">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="20dp">
+           <TextView
+               android:id="@+id/del"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_centerHorizontal="true"
+               android:text="Delete Students"
+               android:textSize="30dp"/>
+           <SearchView
+               android:id="@+id/delsearch"
+               android:background="@drawable/edittext_selected"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/del"
+               android:textSize="20dp"
+               android:layout_centerHorizontal="true"
+               android:queryHint="name"
+               />
+           <ListView
+               android:id="@+id/listView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/delsearch">
+
+           </ListView>
+
+       </RelativeLayout>
+
+</LinearLayout>

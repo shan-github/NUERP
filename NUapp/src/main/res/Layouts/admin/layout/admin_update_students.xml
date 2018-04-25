@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.nuerp.AdminActivity.addFrag"
+    android:orientation="vertical">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="20dp">
+
+           <TextView
+               android:id="@+id/updateEdittext"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_centerHorizontal="true"
+               android:text="Update Students"
+               android:textSize="30dp"/>
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="Search"
+               android:background="@drawable/edittext_selected"
+               android:padding="10dp"
+               android:id="@+id/usearch"
+               android:layout_below="@id/updateEdittext"/>
+           <RelativeLayout
+               android:id="@+id/r1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/usearch"
+               >
+
+               <EditText
+                   android:id="@+id/e1"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="Name"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b1"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/r2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/r1"
+               >
+
+               <EditText
+                   android:id="@+id/e2"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="Enrollment number"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b2"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/r3"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/r2"
+               >
+
+               <EditText
+                   android:id="@+id/e3"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="Program"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b3"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/r4"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/r3"
+               >
+
+               <EditText
+                   android:id="@+id/e4"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="Phone number"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b4"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/r5"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/r4"
+               >
+
+               <EditText
+                   android:id="@+id/e5"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="Year"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b5"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/r6"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/r5"
+               >
+
+               <EditText
+                   android:id="@+id/e6"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="Branch"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b6"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/r7"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/r6"
+               >
+
+               <EditText
+                   android:id="@+id/e7"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   android:hint="password"
+                   android:layout_alignParentLeft="true"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/b7"
+                   android:background="@drawable/custom_button_trans"
+                   android:textColor="@color/colorPrimary"
+                   />
+
+           </RelativeLayout>
+
+
+           <Button
+               android:id="@+id/updateBtn"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="10dp"
+               android:layout_margin="10dp"
+               android:layout_alignParentBottom="true"
+               android:textSize="20dp"
+               android:text="Update"
+               android:background="@drawable/custom_button2"/>
+       </RelativeLayout>
+
+</LinearLayout>

@@ -31,6 +31,19 @@ dbHelper mydb;
                startActivity(new Intent(adminHome.this,addOpt.class));
            }
        });
+        a2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(adminHome.this,deleteOpt.class));
+            }
+        });
+        a3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(adminHome.this,updateOpt.class));
+            }
+        });
+
        viewData();
 
     }
@@ -47,18 +60,19 @@ dbHelper mydb;
                     showMessage("Error","No Data");
                     return;
                 }
-                while(res.moveToNext())
-                {
-                    stringBuffer.append("Name: "+res.getString(0)+"\n"+
-                            "Enrollment no.: "+res.getString(1)+"\n"+
-                            "program: "+res.getString(2)+"\n"+
-                            "phone: "+res.getString(3)+"\n"+
-                            "year: "+res.getString(4)+"\n"+
-                            "email id: "+res.getString(5)+"\n"+
-                            "password: "+res.getString(6)+"\n"+
-                            "login status:"+res.getString(10)+"\n"
-                            +"---------------------------------\n"
+                else{
+                while(res.moveToNext()) {
+                    stringBuffer.append("Name: " + res.getString(0) + "\n" +
+                            "Enrollment no.: " + res.getString(1) + "\n" +
+                            "program: " + res.getString(2) + "\n" +
+                            "phone: " + res.getString(3) + "\n" +
+                            "year: " + res.getString(4) + "\n" +
+                            "email id: " + res.getString(5) + "\n" +
+                            "password: " + res.getString(6) + "\n" +
+                            "login status:" + res.getString(10) + "\n"
+                            + "---------------------------------\n"
                     );
+                }
 
                 }
                 showMessage("Students:",stringBuffer.toString());
