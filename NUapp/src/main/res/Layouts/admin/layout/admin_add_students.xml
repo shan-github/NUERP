@@ -35,19 +35,20 @@
                android:hint="Enrollment number"
                />
            <EditText
-               android:id="@+id/program"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textSize="20dp"
-               android:hint="Program"
-               />
-           <EditText
                android:id="@+id/phone"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:textSize="20dp"
                android:hint="Phone number"
                />
+           <EditText
+               android:id="@+id/program"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="20dp"
+               android:hint="Program"
+               />
+
            <EditText
                android:id="@+id/year"
                android:layout_width="match_parent"

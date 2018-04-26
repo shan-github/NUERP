@@ -7,14 +7,35 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:background="@color/back">
+        <TextView
+            android:id="@+id/loggedt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complaints logged:"
+            android:padding="10dp"
+            android:textColor="@color/white"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/loggedt"
+    android:layout_above="@id/tcd"
+    android:padding="5dp">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    </android.support.v7.widget.RecyclerView>
+</ScrollView>
     <android.support.v7.widget.CardView
+        android:id="@+id/tcd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
         <Button
+            android:id="@+id/ticket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

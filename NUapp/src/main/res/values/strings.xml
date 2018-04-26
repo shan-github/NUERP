@@ -49,6 +49,47 @@
         <item>BT</item>
         <item>ECE</item>
         </string-array>
+    <string-array name="year">
+        <item>select year</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="ctype">
+        <item>select</item>
+        <item>Assess control system</item>
+        <item>Carpentry</item>
+        <item>CCTV</item>
+        <item>civil</item>
+        <item>Electronics</item>
+        <item>ERP/Nucleus-Exam data</item>
+        <item>ERP/Nucleus-Fees data</item>
+        <item>ERP/Nucleus-Software defects</item>
+        <item>ERP/Nucleus-Student profile</item>
+        <item>Fire Alarm System</item>
+        <item>Fire fighting</item>
+        <item>Glass break sensor</item>
+        <item>Housekeeping academic block</item>
+        <item>Housekeeping PG block</item>
+        <item>Housekeeping UG block</item>
+        <item>HVAC</item>
+        <item>Medical</item>
+        <item>Mess</item>
+        <item>Plumbing</item>
+        <item>RO water</item>
+        <item>Rodent replant</item>
+        <item>security</item>
+        <item>TCO-gatepass system</item>
+        <item>TCO-lab support</item>
+        <item>TCO-mail student</item>
+        <item>TCO-moodle</item>
+        <item>TCO-system hardware</item>
+        <item>TCO-wireless ntework</item>
+        <item>Temprature sensors</item>
+        <item>Water leak detector</item>
+        <item>others</item>
+    </string-array>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->

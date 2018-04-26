@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Random;
+
 import static android.content.ContentValues.TAG;
 
 public class dbHelper extends SQLiteOpenHelper {
@@ -59,6 +63,13 @@ public class dbHelper extends SQLiteOpenHelper {
                 COL_8+" int default 0," +
                 "foreign key(current_sem) references semester(semester)"
                 +");");
+        db.execSQL("create table complaint (" +
+                "ticket_no varchar(20) unique not null," +
+                "email_id varchar(50)," +
+                "complaint_type varchar(20) not null," +
+                "log_date text," +
+                "description varchar(300)," +
+                "status varchar(20) not null);");
         db.execSQL("insert into branch values('CSE','Computer Science'),('ECE','Electronics'),('BT','Bio Technology');");
         db.execSQL("insert into semesters values(1),(2),(3),(4),(5),(6),(7),(8)");
 
@@ -121,11 +132,6 @@ public class dbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_8 ,log);
         db.update(TABLE_NAME,contentValues," email_id = "+"'"+email+"'",null );
     }
-    public void deleteData(String enro)
-    {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME,"en_no=?",new String[]{enro});
-    }
     public Cursor search(String name)
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -142,4 +148,32 @@ public class dbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, COL_2+"="+id, null);
     }
+    public Cursor getTickets(String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("select * from complaint where email_id = '"+email+"';",null);
+        return data;
+    }
+    public boolean insertTicket(String email,String ctype,String desc)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        Random rand=new Random();
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String log = sdf.format(c.getTime());
+        contentValues.put("ticket_no","STU1800"+rand.nextInt(8000)+"");
+        contentValues.put("email_id",email);
+        contentValues.put("complaint_type",ctype);
+        contentValues.put("log_date",log);
+        contentValues.put("description",desc);
+        contentValues.put("status","open");
+        long res= db.insert("complaint",null,contentValues);
+        if(res==-1)
+            return false;
+        else
+            return true;
+
+    }
+
 }

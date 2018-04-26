@@ -27,7 +27,9 @@ import android.widget.Toast;
 import com.project.nuerp.R;
 import com.project.nuerp.Settings;
 import com.project.nuerp.StudentFragment.attFrag;
+import com.project.nuerp.StudentFragment.complaintFrag;
 import com.project.nuerp.StudentFragment.courseFrag;
+import com.project.nuerp.StudentFragment.downloadFrag;
 import com.project.nuerp.StudentFragment.timeFrag;
 import com.project.nuerp.dbHelper;
 import com.project.nuerp.StudentFragment.examFrag;
@@ -45,10 +47,6 @@ TextView name,email;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_erp);
-
-        name=(TextView)findViewById(R.id.username);
-        email=(TextView)findViewById(R.id.emailView);
-
         mydb=new dbHelper(this);
         Cursor res = mydb.getLogin();
         res.moveToFirst();
@@ -63,14 +61,10 @@ TextView name,email;
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        try {
-            name.setText(res.getString(0));
-            email.setText(res.getString(5));
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(this, res.getString(0), Toast.LENGTH_SHORT).show();
-        }
+        name=(TextView) navigationView.getHeaderView(0).findViewById(R.id.username);
+        email=(TextView) navigationView.getHeaderView(0).findViewById(R.id.emailView);
+        name.setText(res.getString(0));
+        email.setText(res.getString(5));
     }
 
     @Override
@@ -232,6 +226,18 @@ TextView name,email;
             timeFrag time =new timeFrag();
             FragmentManager fragmentManager= getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.mfragment,time).commit();
+
+        }else if (id == R.id.nav_down) {
+            setTitle("Downloads");
+            downloadFrag down =new downloadFrag();
+            FragmentManager fragmentManager= getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.mfragment,down).commit();
+
+        }else if (id == R.id.nav_comp) {
+            setTitle("Complaints");
+                complaintFrag comp =new complaintFrag();
+            FragmentManager fragmentManager= getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.mfragment,comp).commit();
 
         }else if (id == R.id.logout)
         {

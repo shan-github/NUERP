@@ -43,13 +43,13 @@
         <activity android:name=".Activity.student_login" />
         <activity android:name=".AdminActivity.adminHome" />
         <activity android:name=".AdminActivity.addOpt" />
-        <activity android:name=".AdminActivity.add_course"></activity>
+        <activity android:name=".AdminActivity.add_course" />
         <activity android:name=".AdminActivity.update_students" />
         <activity android:name=".AdminActivity.update_course" />
         <activity android:name=".AdminActivity.delete_course" />
         <activity android:name=".AdminActivity.deleteOpt" />
         <activity android:name=".AdminActivity.delete_student" />
-
+        <activity android:name=".StudentFragment.createComp"></activity>
     </application>
 
 </manifest>
