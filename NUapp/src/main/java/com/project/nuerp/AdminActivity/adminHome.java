@@ -28,19 +28,19 @@ dbHelper mydb;
        a1.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               startActivity(new Intent(adminHome.this,addOpt.class));
+               startActivity(new Intent(adminHome.this,addFrag.class));
            }
        });
         a2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(adminHome.this,deleteOpt.class));
+                startActivity(new Intent(adminHome.this,delete_student.class));
             }
         });
         a3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(adminHome.this,updateOpt.class));
+                startActivity(new Intent(adminHome.this,update_students.class));
             }
         });
 
