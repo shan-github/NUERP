@@ -164,62 +164,8 @@
                         android:textColor="@color/black"
                         android:textSize="20dp" />
                 </android.support.v7.widget.CardView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:background="@color/fore"
-                    android:layout_marginTop="10dp"
-                    android:text="Date of Birth"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="15dp"
-                        android:text="16/6/1998"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-                </android.support.v7.widget.CardView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:background="@color/fore"
-                    android:layout_marginTop="10dp"
-                    android:text="Blood Group"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="15dp"
-                        android:text="O Rh Negative"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-                </android.support.v7.widget.CardView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

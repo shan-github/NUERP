@@ -39,8 +39,14 @@ public class dbHelper extends SQLiteOpenHelper {
                 " (semester integer not null primary key" +
                 ");");
 
-       db.execSQL("create table branch(branch_id varchar(3) primary key not null," +
-         "branch_name varchar(30) not null);");
+       db.execSQL("create table branch(" +
+               "branch_id varchar(3) primary key not null," +
+               "branch_name varchar(30) not null);");
+
+        db.execSQL("create table attendence(" +
+                "email varchar(50) not null," +
+                "subject varchar(50) not null," +
+                "attendence int not null);");
 
          db.execSQL("create table courses" +
           " (course_id varchar(10) not null primary key," +
@@ -72,6 +78,8 @@ public class dbHelper extends SQLiteOpenHelper {
                 "status varchar(20) not null);");
         db.execSQL("insert into branch values('CSE','Computer Science'),('ECE','Electronics'),('BT','Bio Technology');");
         db.execSQL("insert into semesters values(1),(2),(3),(4),(5),(6),(7),(8)");
+//        db.execSQL("insert into courses values('CSE','Computer Science'),('ECE','Electronics'),('BT','Bio Technology');");
+
 
     }
 
@@ -174,6 +182,43 @@ public class dbHelper extends SQLiteOpenHelper {
         else
             return true;
 
+    }
+    public boolean insertAttendence(String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues c=new ContentValues();
+        Random rand=new Random();
+        String[] sub={"Operating System",
+                "Design and analysis of algorithm",
+                "Professional Ethics and Values",
+                "Computer architecture and organization",
+                "Database Management System"};
+        int min=50;
+        long res=-1;
+        for(int i=0;i<sub.length;i++)
+        {
+            c.put("email",email);
+            c.put("subject",sub[i]);
+            c.put("attendence",min+rand.nextInt(50));
+            res= db.insert("attendence",null,c);
+        }
+        if(res==-1)
+            return false;
+        else
+            return true;
+    }
+    public Cursor getAttendence(String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("select subject,attendence from attendence where email = '"+email+"';",null);
+        return data;
+    }
+    public void updatePass(String email, String log)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(COL_7 ,log);
+        db.update(TABLE_NAME,contentValues," email_id = "+"'"+email+"'",null );
     }
 
 }

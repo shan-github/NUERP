@@ -40,7 +40,6 @@
         <activity android:name=".dbHelper" />
         <activity android:name=".AdminActivity.addFrag" />
         <activity android:name=".AdminActivity.adminHome" />
-        <activity android:name=".AdminActivity.update_students" />
         <activity android:name=".AdminActivity.delete_student" />
         <activity android:name=".StudentFragment.createComp"></activity>
     </application>

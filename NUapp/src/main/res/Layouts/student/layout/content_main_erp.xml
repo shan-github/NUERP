@@ -59,6 +59,7 @@
                                 android:textStyle="bold"
                                 android:gravity="center"/>
                             <TextView
+                                android:id="@+id/patt"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="90%"
@@ -93,6 +94,7 @@
                                 android:textStyle="bold"
                                 android:gravity="center"/>
                             <TextView
+                                android:id="@+id/dcourse"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="CSE"
@@ -161,6 +163,7 @@
                                 android:textStyle="bold"
                                 android:gravity="center"/>
                             <TextView
+                                android:id="@+id/cyear"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="2nd"

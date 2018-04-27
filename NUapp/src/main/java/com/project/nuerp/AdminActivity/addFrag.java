@@ -77,7 +77,10 @@ RadioButton m,f;
                     );
 
                     if(done)
-                            Snackbar.make(v,"Data inserted Successfully",Snackbar.LENGTH_SHORT).setAction("Action",null).show();
+                    {
+                        Snackbar.make(v,"Data inserted Successfully",Snackbar.LENGTH_SHORT).setAction("Action",null).show();
+                         mydb.insertAttendence(email.getText().toString());
+                    }
                     else
                         Toast.makeText(addFrag.this,"Unable to insert data!!",Toast.LENGTH_SHORT).show();
 

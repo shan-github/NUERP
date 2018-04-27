@@ -13,7 +13,7 @@ import com.project.nuerp.R;
 import com.project.nuerp.dbHelper;
 
 public class adminHome extends AppCompatActivity {
-CardView a1,a2,a3,a4;
+CardView a1,a2,a4;
 dbHelper mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ dbHelper mydb;
 
         a1=(CardView)findViewById(R.id.a1);
         a2=(CardView)findViewById(R.id.a2);
-        a3=(CardView)findViewById(R.id.a3);
+        //a3=(CardView)findViewById(R.id.a3);
         a4=(CardView)findViewById(R.id.a4);
        a1.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -37,12 +37,12 @@ dbHelper mydb;
                 startActivity(new Intent(adminHome.this,delete_student.class));
             }
         });
-        a3.setOnClickListener(new View.OnClickListener() {
+      /*  a3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(adminHome.this,update_students.class));
             }
-        });
+        });*/
 
        viewData();
 

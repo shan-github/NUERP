@@ -17,7 +17,7 @@ public class radapter extends RecyclerView.Adapter<rholder>{
     List<ticket> ticket= Collections.emptyList();
     private OnTapListener onTapListener;
 
-    public radapter(Activity activity, List<com.project.nuerp.StudentFragment.ticket> ticket) {
+    public radapter(Activity activity, List<ticket> ticket) {
         this.activity = activity;
         this.ticket = ticket;
     }

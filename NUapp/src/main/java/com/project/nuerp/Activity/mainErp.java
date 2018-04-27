@@ -1,5 +1,8 @@
 package com.project.nuerp.Activity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -42,11 +46,14 @@ public class mainErp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 dbHelper mydb;
 boolean doubleBackToExitPressedOnce = false;
-TextView name,email;
+TextView name,email,att,course;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_erp);
+
+        float percent=0.0f;
         mydb=new dbHelper(this);
         Cursor res = mydb.getLogin();
         res.moveToFirst();
@@ -61,10 +68,38 @@ TextView name,email;
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         name=(TextView) navigationView.getHeaderView(0).findViewById(R.id.username);
         email=(TextView) navigationView.getHeaderView(0).findViewById(R.id.emailView);
+        att=(TextView)findViewById(R.id.patt);
+        course=(TextView)findViewById(R.id.dcourse);
+
         name.setText(res.getString(0));
         email.setText(res.getString(5));
+        course.setText(res.getString(8).toUpperCase());
+
+        StringBuffer stringBuffer=new StringBuffer();
+        Cursor a=mydb.getAttendence(res.getString(5));
+        a.moveToFirst();
+        NotificationCompat.Builder builder=new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.drawable.warning);
+        builder.setAutoCancel(true);
+        builder.setContentTitle("Low in attendance");
+        while(a.moveToNext())
+        {
+            int check=a.getInt(1);
+            percent+=a.getInt(1);
+            if(check<75)
+            {
+                stringBuffer.append(a.getString(0)+"\n");
+            }
+        }
+        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(stringBuffer.toString()));
+        builder.setContentText(stringBuffer.toString());
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(248, builder.build());
+        att.setText((percent/5)+"%");
+
     }
 
     @Override
@@ -103,10 +138,10 @@ TextView name,email;
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             startActivity(new Intent(this, Settings.class));
             return true;
-        }
+        }*/
         if (id == R.id.about) {
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setCancelable(true);
@@ -116,37 +151,52 @@ TextView name,email;
 
             return true;
         }
-        if (id == R.id.hostel) {
-            StringBuffer stringBuffer =new StringBuffer();
-            stringBuffer.append("Hostel: "+/*res.getString(0)+*/"\n"+
-                    "Room no.: "+/*res.getString(1)+*/"\n"+
-                    "Bed no.: "+/*res.getString(2)+*/"\n"+
-                    "Alloted date: "+/*res.getString(3)+*/"\n"+
-                    "Effective start date: "+/*res.getString(4)+*/"\n"+
-                    "Effective end date: "+/*res.getString(5)+*/"\n"+
-                    "Room type: "+/*res.getString(6)+*/"\n"+
-                    "location:"+/*res.getString(7)+*/"\n"
-            );
-            AlertDialog.Builder builder =new AlertDialog.Builder(this);
-            builder.setCancelable(true);
-            builder.setTitle("Hostel details:");
-            builder.setMessage(stringBuffer.toString());
-            builder.show();
+        //if (id == R.id.hostel) {
+          //  StringBuffer stringBuffer =new StringBuffer();
+            //stringBuffer.append("Hostel: "+/*res.getString(0)+*/"\n"+
+              //      "Room no.: "+/*res.getString(1)+*/"\n"+
+                //    "Bed no.: "+/*res.getString(2)+*/"\n"+
+                  //  "Alloted date: "+/*res.getString(3)+*/"\n"+
+                    //"Effective start date: "+/*res.getString(4)+*/"\n"+
+                    //"Effective end date: "+/*res.getString(5)+*/"\n"+
+                    //"Room type: "+/*res.getString(6)+*/"\n"+
+                    //"location:"+/*res.getString(7)+*/"\n"
+            //);
+            //AlertDialog.Builder builder =new AlertDialog.Builder(this);
+            //builder.setCancelable(true);
+            //builder.setTitle("Hostel details:");
+            //builder.setMessage(stringBuffer.toString());
+            //builder.show();
 
-            return true;
-        }
+            //return true;
+        //}
         if (id == R.id.changePwd) {
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             LayoutInflater inflater = this.getLayoutInflater();
             final View dialogView = inflater.inflate(R.layout.alert_pwd, null);
             builder.setView(dialogView);
+           final Cursor res=mydb.getLogin();
+           res.moveToFirst();
+           final EditText input1=(EditText)dialogView.findViewById(R.id.current);
+            final EditText input2=(EditText)dialogView.findViewById(R.id.newpwd);
+            final EditText input3=(EditText)dialogView.findViewById(R.id.confirm);
 
-           final EditText input1=(EditText)findViewById(R.id.current);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
+                    if(input1.getText().toString().contentEquals(res.getString(6)))
+                    {
+                        if(input2.getText().toString().contains(input3.getText().toString()) && input2.getText().toString()!=null && input3.getText().toString()!=null)
+                        {
+                          mydb.updatePass(res.getString(5),input3.getText().toString());
+                            Toast.makeText(mainErp.this, "Password updated", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(mainErp.this, "Unable to update", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(mainErp.this, "Unable to update", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(mainErp.this, "Changed", Toast.LENGTH_SHORT).show();
                 }
             });
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
